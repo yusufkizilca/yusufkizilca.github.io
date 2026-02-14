@@ -1,172 +1,233 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Yusuf Kızılca | Sesli Edebiyat</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yusuf Kızılca | Sesli Edebiyat</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            background: linear-gradient(135deg, #1e1f26, #2b2e38);
-            color: #eaeaea;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.8;
-        }
+<style>
+body {
+    margin: 0;
+    background: #1c1d22;
+    color: #d6d6d6;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 60px 40px;
-        }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 25px;
+}
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            text-align: center;
-            margin-bottom: 10px;
-            color: #e8d8b9;
-        }
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    color: #e6d5b8;
+    margin-bottom: 10px;
+}
 
-        .tagline {
-            text-align: center;
-            font-style: italic;
-            color: #cfcfcf;
-            margin-bottom: 60px;
-            font-size: 18px;
-        }
+.subtitle {
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 40px;
+}
 
-        .cta {
-            text-align: center;
-            margin-bottom: 80px;
-        }
+.hero {
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    animation: fadeIn 1.5s ease forwards;
+}
 
-        .cta a {
-            background: #e8d8b9;
-            color: #1e1f26;
-            padding: 14px 28px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: 0.3s ease;
-        }
+.hero h1 {
+    font-size: 64px;
+}
 
-        .cta a:hover {
-            opacity: 0.8;
-        }
+.hero p {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
 
-        h2 {
-            font-family: 'Playfair Display', serif;
-            margin-top: 60px;
-            color: #e8d8b9;
-            font-weight: 500;
-        }
+.button-primary {
+    background: #e6d5b8;
+    color: #1c1d22;
+    padding: 16px 32px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    display: inline-block;
+}
 
-        p {
-            margin-top: 15px;
-            font-weight: 300;
-            font-size: 17px;
-        }
+.button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(230,213,184,0.2);
+}
 
-        .audio {
-            margin-top: 30px;
-        }
+.section {
+    margin-top: 120px;
+}
 
-        .links {
-            margin-top: 40px;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #e6d5b8;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
 
-        .links a {
-            text-decoration: none;
-            color: #1e1f26;
-            background: #e8d8b9;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: 0.3s ease;
-        }
+.video-wrapper {
+    margin-top: 40px;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
 
-        .links a:hover {
-            opacity: 0.8;
-        }
+.video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
 
-        footer {
-            margin-top: 100px;
-            text-align: center;
-            font-size: 14px;
-            color: #999;
-        }
+.categories {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px;
-            }
+.category {
+    flex: 1;
+    min-width: 250px;
+    background: #24252b;
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
 
-            h1 {
-                font-size: 36px;
-            }
-        }
-    </style>
+.category:hover {
+    transform: translateY(-5px);
+    background: #2c2d34;
+}
+
+.category h3 {
+    color: #e6d5b8;
+    margin-bottom: 15px;
+}
+
+.category a {
+    text-decoration: none;
+    color: #d6d6d6;
+}
+
+.footer-cta {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.footer-cta h2 {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    padding-bottom: 40px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 42px;
+    }
+    .categories {
+        flex-direction: column;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-
+<div class="hero container">
     <h1>Yusuf Kızılca</h1>
-    <div class="tagline">
-        Bir sayfa daha… çünkü bazı metinler yalnız okunmaz, dinlenir.
-    </div>
+    <p>Bazı hikâyeler okunmaz. Dinlenir.</p>
+    <a class="button-primary" href="https://www.youtube.com/@Bir_sayfa_daha" target="_blank">
+        🎥 Son Videoyu İzle
+    </a>
+</div>
 
-    <div class="cta">
-        <a href="https://soundcloud.com/bir-sayfa-daha" target="_blank">
-            ▶ Dinlemeye Başla
-        </a>
-    </div>
-
-    <h2>Ben Kimim?</h2>
-    <p>
-        Kitapları yüksek sesle okumanın ayrı bir büyüsü olduğuna inanıyorum.
-        Bazı metinler gözle değil, kulakla anlaşılır.
-        Bu yüzden buradayım.
-        Bir sayfa daha demek için.
-    </p>
-
+<div class="container section">
     <h2>Neden Sesli Edebiyat?</h2>
     <p>
-        Çünkü kelimeler bazen yalnız kalmamalı.
-        Çünkü bir ses, bir paragrafı bambaşka bir yere taşıyabilir.
-        Çünkü bazı hikâyeler, birinin onları hissetmesini ister.
+        Bu bir kariyer sayfası değil.
+        Bu, metinlere ses vermeyi seven birinin alanı.
+        Eğer kelimelerin ağırlığını seviyorsan,
+        burada biraz kalabilirsin.
     </p>
-
-    <h2>Son Okuma</h2>
-    <p>Bu hafta zihnimde yankılanan metin.</p>
-
-    <div class="audio">
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bir-sayfa-daha&color=%23e8d8b9">
-        </iframe>
-    </div>
-
-    <h2>Hikâyeler farklı yerlerde yaşamaya devam ediyor:</h2>
-
-    <div class="links">
-        <a href="https://www.youtube.com/@Bir_sayfa_daha" target="_blank">YouTube</a>
-        <a href="https://soundcloud.com/bir-sayfa-daha" target="_blank">SoundCloud</a>
-        <a href="https://www.dailymotion.com/birsayfadaha" target="_blank">Dailymotion</a>
-    </div>
-
-    <footer>
-        Ses, bazen kelimelerden daha fazlasıdır.
-    </footer>
-
 </div>
+
+<div class="container section">
+    <h2>Son Yayın</h2>
+    <p>Bu hafta okunan metin.</p>
+
+    <div class="video-wrapper">
+        <!-- BURAYA SON VİDEONUN EMBED LİNKİNİ KOY -->
+        <iframe src="https://www.youtube.com/watch?v=4JtYLy_e_XY&t=7s"
+        frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="container section">
+    <h2>Seriler</h2>
+
+    <div class="categories">
+        <div class="category">
+            <h3>📖 Hikâye</h3>
+            <a href="https://www.youtube.com/@Bir_sayfa_daha/playlists" target="_blank">
+                Hikâye okumalarını keşfet →
+            </a>
+        </div>
+
+        <div class="category">
+            <h3>🖋️ Deneme</h3>
+            <a href="https://www.youtube.com/@Bir_sayfa_daha/playlists" target="_blank">
+                Deneme metinlerine git →
+            </a>
+        </div>
+
+        <div class="category">
+            <h3>🎙️ Kısa Metin</h3>
+            <a href="https://www.youtube.com/@Bir_sayfa_daha/playlists" target="_blank">
+                Kısa okumalara göz at →
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer-cta container">
+    <h2>Bir sayfa daha mı?</h2>
+    <a class="button-primary" href="https://www.youtube.com/@Bir_sayfa_daha" target="_blank">
+        YouTube Kanalına Git
+    </a>
+</div>
+
+<footer>
+    © 2026 Yusuf Kızılca | Sesli Edebiyat  
+    <br>
+    Ses, bazen kelimelerden daha fazlasıdır.
+</footer>
 
 </body>
 </html>
