@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yusuf Kızılca | Sesli Edebiyat</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin: 0;
     background: #1c1d22;
@@ -17,82 +18,136 @@ body {
     overflow-x: hidden;
 }
 
+/* Hafif sinematik glow */
+body::before {
+    content: "";
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(230,213,184,0.06) 0%, transparent 70%);
+    top: -200px;
+    left: -200px;
+    z-index: -1;
+}
+
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 80px 25px;
+    padding: 100px 25px;
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 56px;
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(28,29,34,0.8);
+    backdrop-filter: blur(8px);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
     color: #e6d5b8;
-    margin-bottom: 10px;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
-.subtitle {
-    font-size: 18px;
-    color: #aaa;
-    margin-bottom: 40px;
-}
-
+/* HERO */
 .hero {
     text-align: center;
-    padding-top: 120px;
-    padding-bottom: 120px;
-    animation: fadeIn 1.5s ease forwards;
+    padding-top: 160px;
 }
 
 .hero h1 {
-    font-size: 64px;
+    font-family: 'Playfair Display', serif;
+    font-size: 68px;
+    color: #e6d5b8;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 22px;
+    color: #aaa;
     margin-bottom: 50px;
 }
 
 .button-primary {
     background: #e6d5b8;
     color: #1c1d22;
-    padding: 16px 32px;
+    padding: 18px 36px;
     text-decoration: none;
     border-radius: 8px;
-    font-weight: 500;
+    font-weight: 600;
     transition: 0.3s ease;
     display: inline-block;
 }
 
 .button-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(230,213,184,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(230,213,184,0.3);
 }
 
+/* SECTIONS */
 .section {
-    margin-top: 120px;
+    margin-top: 150px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section h2 {
     font-family: 'Playfair Display', serif;
     color: #e6d5b8;
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 38px;
+    margin-bottom: 25px;
 }
 
+/* VIDEO */
 .video-wrapper {
     margin-top: 40px;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .video-wrapper iframe {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
 }
 
+/* STATS */
+.stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat h3 {
+    font-size: 32px;
+    color: #e6d5b8;
+    margin-bottom: 10px;
+}
+
+/* CATEGORIES */
 .categories {
     display: flex;
     gap: 30px;
@@ -110,7 +165,7 @@ h1 {
 }
 
 .category:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     background: #2c2d34;
 }
 
@@ -124,13 +179,10 @@ h1 {
     color: #d6d6d6;
 }
 
+/* CTA */
 .footer-cta {
     text-align: center;
-    margin-top: 150px;
-}
-
-.footer-cta h2 {
-    margin-bottom: 30px;
+    margin-top: 200px;
 }
 
 footer {
@@ -141,23 +193,26 @@ footer {
     padding-bottom: 40px;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
+/* RESPONSIVE */
 @media(max-width:768px){
     .hero h1 {
         font-size: 42px;
     }
-    .categories {
+    .categories, .stats {
         flex-direction: column;
     }
 }
+
 </style>
 </head>
 
 <body>
+
+<nav>
+    <a href="#video">Son Video</a>
+    <a href="#seriler">Seriler</a>
+    <a href="https://www.youtube.com/@Bir_sayfa_daha" target="_blank">YouTube</a>
+</nav>
 
 <div class="hero container">
     <h1>Yusuf Kızılca</h1>
@@ -175,21 +230,35 @@ footer {
         Eğer kelimelerin ağırlığını seviyorsan,
         burada biraz kalabilirsin.
     </p>
+
+    <div class="stats">
+        <div class="stat">
+            <h3>+50</h3>
+            <p>Yüklenen Video</p>
+        </div>
+        <div class="stat">
+            <h3>Her Hafta</h3>
+            <p>Yeni Okuma</p>
+        </div>
+        <div class="stat">
+            <h3>Bir Sayfa Daha</h3>
+            <p>Devam Etme Sebebi</p>
+        </div>
+    </div>
 </div>
 
-<div class="container section">
+<div class="container section" id="video">
     <h2>Son Yayın</h2>
-    <p>Bu hafta okunan metin.</p>
 
     <div class="video-wrapper">
-        <!-- BURAYA SON VİDEONUN EMBED LİNKİNİ KOY -->
-        <iframe src="https://www.youtube.com/watch?v=4JtYLy_e_XY"
+        <iframe 
+        src="https://www.youtube.com/embed/4JtYLy_e_XY"
         frameborder="0"
         allowfullscreen></iframe>
     </div>
 </div>
 
-<div class="container section">
+<div class="container section" id="seriler">
     <h2>Seriler</h2>
 
     <div class="categories">
@@ -228,6 +297,21 @@ footer {
     <br>
     Ses, bazen kelimelerden daha fazlasıdır.
 </footer>
+
+<script>
+// Scroll fade-in efekti
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+        const position = section.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        if(position < screenPosition){
+            section.classList.add('visible');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
